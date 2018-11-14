@@ -27,7 +27,6 @@ public class JokeApiController {
 
     @GetMapping(value="/joke")
     public Map getJoke(){
-        //return  jokeService.getJoke();
         return Collections.singletonMap("joke", jokeService.getJoke());
     }
 }
