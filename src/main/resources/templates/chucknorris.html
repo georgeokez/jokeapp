@@ -3,12 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Jokes</title>
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <style>
+        body, #mainWrapper {
+            height: 70%;
+            background-color:rgb(245, 245, 245);
+        }
+
+        .generic-container {
+            width:80%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #CFD8DC;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 0 5px black;
+        }
+
+        .floatRight{
+            float:right;
+            margin-right: 18px;
+        }
+
+        .custom-width {
+            width: 80px !important;
+        }
+
+    </style>
 </head>
-<body>
 
-<h1>Chuch Norris Jokes</h1>
+<body ng-app="myApp">
+    <div class="generic-container" ng-controller="UserController as ctrl">
+        <div class="panel panel-default">
+            <div class="panel-heading"><span class="h3">Chuch Norris Jokes</span></div>
+                <div class="panel-body">
+                    <blockquote class="blockquote-reverse">
+                        <p th:text="${joke}">Insert Jokes Here.</p>
+                        <footer>Chuck Norris</footer>
+                    </blockquote>
+                </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <button class="btn btn-primary floatRight">Generate New Quote</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<p th:text="${joke}">Insert Jokes Here.</p>
 
+
+
+<div th:fragment="body-bottom-scripts">
+    <script src="assets/angular/angular.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</div>
 </body>
 </html>
