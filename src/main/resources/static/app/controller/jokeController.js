@@ -2,7 +2,7 @@
 
 App.controller('JokeController', ['$scope','$http', function ($scope, $http) {
 
-    var URL = "https://34.227.214.181:80/api/v1/joke";
+    var URL = "https://52.54.218.210:80/api/v1/joke";
 
     $scope.joke = "";
 
