@@ -12,7 +12,7 @@
         }
 
         .generic-container {
-            width:80%;
+            width:70%;
             margin-left: auto;
             margin-right: auto;
             margin-top: 20px;
@@ -37,18 +37,18 @@
 </head>
 
 <body ng-app="myApp">
-    <div class="generic-container" ng-controller="UserController as ctrl">
+    <div class="generic-container" ng-controller="JokeController">
         <div class="panel panel-default">
             <div class="panel-heading"><span class="h3">Chuch Norris Jokes</span></div>
                 <div class="panel-body">
                     <blockquote class="blockquote-reverse">
-                        <p th:text="${joke}">Insert Jokes Here.</p>
+                        <p>{{joke}}</p>
                         <footer>Chuck Norris</footer>
                     </blockquote>
                 </div>
             <div class="panel-footer">
                 <div class="row">
-                    <button class="btn btn-info floatRight">Generate New Quote</button>
+                    <button class="btn btn-info floatRight" ng-click="getJoke()">Generate New Quote</button>
                 </div>
             </div>
         </div>
@@ -59,7 +59,11 @@
 
 <div th:fragment="body-bottom-scripts">
     <script src="assets/angular/angular.js"></script>
+    <script src="assets/angular/angular-resource.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="app/main.js"></script>
+    <!--<script src="app/service/jokeService.js"></script>-->
+    <script src="app/controller/jokeController.js"></script>
 </div>
 </body>
 </html>
